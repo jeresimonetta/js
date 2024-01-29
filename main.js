@@ -1,5 +1,6 @@
 let nombre = prompt("Bienvenidx! Por favor ingresá tu nombre para conocer cuáles son las opciones de crédito que tenemos para vos.")
-let sueldo = prompt("Por favor indicanos tu sueldo (en pesos y sin centavos).")
+let sueldo = Number(prompt("Por favor indicanos tu sueldo (en pesos y sin centavos)."))
+let prestamo = Number(prompt("¿Cuál es monto de tu préstamo?"))
 
 if(sueldo < 100000){
     alert(nombre + " lamentablemente no contamos con opciones de créditos para vos.")
@@ -7,7 +8,6 @@ if(sueldo < 100000){
 else{
     if(sueldo >= 100000 && sueldo < 500000){
         alert(nombre + " tenés disponible un préstamo de $" + sueldo*3 + ". Tocá aceptar para continuar.")
-        let prestamo = prompt("¿Cuál es monto de tu préstamo?")
         while(prestamo > sueldo*3){
             alert(nombre + " el monto indicado excede tu disponible.")
             prestamo = prompt("¿Cuál es monto de tu préstamo?")
@@ -15,7 +15,6 @@ else{
     }
     else{
         alert(nombre + " tenés disponible un préstamo de $" + sueldo*5 + ". Tocá aceptar para continuar.")
-        let prestamo = prompt("¿Cuál es monto de tu préstamo?")
         while(prestamo > sueldo*5){
             alert(nombre + " el monto indicado excede tu disponible.")
             prestamo = prompt("¿Cuál es monto de tu préstamo?")
@@ -34,6 +33,7 @@ else{
     }
 
     alert("Devolverás tu préstamo en " + anios*12 + " cuotas de $" + valorCuota(prestamo, anios))
+
 
 }
 
